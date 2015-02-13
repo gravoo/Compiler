@@ -1,6 +1,6 @@
-0. interpreter.cc - program interpretujacy interpretujacy dany asembler.
-1. Projekt kompilator -Języki formalne i teoria translacji 
+1. Projekt kompilator - Bartłomiej Sadowski 
 2. Do uruchomienia kompilatora niezbędna jest biblioteka GMP do ściągnięcia z https://gmplib.org/ umożliwiająca obsługę dużych liczb
+3. Kompilator obecnie nie jest zoptymalizowany jeśli chodzi o operację mnożenia, pozostałe wykonywane są w miarę sprawnie.
 4. Idęą działania parsera, jest budowa drzewa AST na poziomie syntezy składniowej a następnie dokonywane jest wyprowadzenie 
 za pomocą metody preorder() zawartej w pliku kompilator.y.
 5. Kompilacja:

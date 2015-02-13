@@ -1,0 +1,9 @@
+(* Błąd w linii 5: niezadeklarowana zmienna a *)
+DECLARE
+  a b
+IN
+  a ASSIGN 10;
+  b ASSIGN 1000;
+  IF a EQ b THEN
+  ENDIF
+END

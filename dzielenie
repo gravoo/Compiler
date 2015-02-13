@@ -1,0 +1,333 @@
+	printf("LOAD %d\n",adres1);
+	counter++;
+	printf("STORE %d\n",tmp1);
+	counter++;
+	printf("JZERO %d\n",counter+75);
+	counter++;
+	printf("LOAD %d\n",adres2);
+	counter++;
+	printf("STORE %d\n",tmp2);
+	counter++;
+	printf("JZERO %d\n",counter+72);
+	counter++;
+	/**************6**************/
+	printf("RESET \n");
+	counter++;
+	printf("STORE %d\n",flagaC);
+	counter++;
+	printf("STORE %d\n",reszta);
+	counter++;
+	printf("STORE %d\n",adresIlosciBitowDzielnika);
+	counter++;
+	printf("INC\n");
+	counter++;
+	printf("STORE %d\n",jedynka);
+	counter++;
+	/**licz ilosc bitow***7***/
+	printf("LOAD %d\n",adresIlosciBitowDzielnika); //0 1 
+	counter++;
+	printf("INC\n");				//1 2 
+	counter++;
+	printf("STORE %d\n",adresIlosciBitowDzielnika);//save save 
+	counter++;
+	printf("LOAD %d\n",adres1);		//1  2
+	counter++;
+	printf("SHR %d\n",adresIlosciBitowDzielnika);			//2 4 
+	counter++;
+	printf("JZERO %d\n",counter+2);		//save save 
+	counter++;
+	printf("JUMP %d\n",counter-6);
+	counter++;
+	/*******************************6*******/
+	printf("LOAD %d\n",adresIlosciBitowDzielnika);
+	counter++;
+	printf("STORE %d\n",dlugosc);		//save save 
+	counter++;
+	printf("STORE %d\n",usuwacz);		//save save 
+	counter++;
+	printf("STORE %d\n",usuwaczTMP);		//save save 
+	counter++;
+	printf("INC\n");				
+	counter++;
+	printf("STORE %d\n",adresIlosciBitowDzielnika);		//save save 
+	counter++;
+	/**mamy liczbe bitow potrzebna do wykonania algorytmu *ilosc operacji potrzenych do dzielenia***10**/
+	printf("RESET\n");
+	counter++;
+	printf("INC\n");				
+	counter++;
+	printf("SHL %d\n",adresIlosciBitowDzielnika);
+	counter++;
+	printf("SUB %d\n",jedynka);
+	counter++;
+	printf("STORE %d\n",licznik);
+	counter++;
+	printf("RESET\n");
+	counter++;
+	printf("INC\n");
+	counter++;
+	printf("SHL %d\n",usuwacz);
+	counter++;
+	printf("STORE %d\n",usuwacz);
+	counter++;
+	printf("LOAD %d\n",licznik);
+	counter++;
+	int poczatek_petli=counter;
+/************************* DZIELIMY!************6*****************/
+	printf("LOAD %d\n",tmp1);		
+	counter++;
+	printf("SHL %d\n",jedynka);
+	counter++;
+	printf("ADD %d\n",flagaC);
+	counter++;
+	printf("STORE %d\n",tmp1);
+	counter++;
+	printf("SHR %d\n",dlugosc);
+	counter++;
+	printf("STORE %d\n",flagaC);
+	counter++;
+	/*******redukcja dzielnika ******10*********/
+	printf("LOAD %d\n",tmp1);
+	counter++;
+	printf("SUB %d\n",usuwacz);
+	counter++;
+	printf("JZERO %d\n",counter+3);
+	counter++;
+	printf("STORE %d\n",tmp1);
+	counter++;
+	printf("JUMP %d\n",counter+6);
+	counter++;
+	printf("LOAD %d\n",usuwacz);
+	counter++;
+	printf("SUB %d\n",tmp1);
+	counter++;
+	printf("JZERO %d\n",counter+2);
+	counter++;
+	printf("LOAD %d\n",tmp1);
+	counter++;
+	printf("STORE %d\n",tmp1);
+	counter++;
+	/**********5*****sprawdzenie warunku konca *************/
+	printf("LOAD %d\n",licznik);
+	counter++;
+	printf("SHR %d\n",jedynka);
+	counter++;
+	printf("STORE %d\n",licznik);
+	counter++;
+	printf("JODD %d\n",counter+2);
+	counter++;
+	printf("JUMP %d\n",counter+19);
+	counter++;
+	/*********6*******operacje z resztą*******************/
+	printf("LOAD %d\n",reszta);
+	counter++;
+	printf("SHL %d\n",jedynka);
+	counter++;
+	printf("ADD %d\n",flagaC);
+	counter++;
+	printf("STORE %d\n",reszta);
+	counter++;
+	printf("RESET\n");
+	counter++;
+	printf("STORE %d\n",flagaC);
+	counter++;
+	/********12********operacje z dzielną*************///
+	printf("LOAD %d\n",reszta);
+	counter++;
+	printf("SUB %d\n",adres2);
+	counter++;
+	printf("JZERO %d\n",counter+6);
+	counter++;
+	printf("STORE %d\n",reszta);
+	counter++;
+	printf("RESET\n");
+	counter++;
+	printf("INC \n");
+	counter++;
+	printf("STORE %d\n",flagaC);
+	counter++;
+	printf("JUMP %d\n",poczatek_petli);
+	counter++;
+	printf("LOAD %d\n",adres2);
+	counter++;
+	printf("SUB %d\n",reszta);
+	counter++;
+	printf("JZERO %d\n",counter-7);
+	counter++;
+	printf("JUMP %d\n",poczatek_petli);
+	counter++;
+	/************************3*****/
+	printf("LOAD %d\n",tmp1);
+	counter++;
+	printf("JUMP %d\n",counter+2);
+	counter++;
+	printf("RESET \n");
+	counter++;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/****************************************************************/
+	/************ licz odwrotnosc tmp1 *******16***********///
+	printf("LOAD %d\n",tmp1);
+	counter++;
+	printf("JZERO %d\n",counter+16);
+	counter++;
+	printf("JODD %d\n",counter+7);
+	counter++;
+	printf("SHR %d\n",jedynka);
+	counter++;
+	printf("STORE %d\n",tmp1);
+	counter++;
+	printf("LOAD %d\n",tmpr);
+	counter++;
+	printf("SHL %d\n",flagaC);
+	counter++;
+	printf("STORE %d\n",tmpr);
+	counter++;
+	printf("JUMP %d\n",poczatek_petli_odwr);
+	counter++;
+	/******************************************/
+	printf("SHR %d\n",jedynka);
+	counter++;
+	printf("STORE %d\n",tmp1);
+	counter++;
+	printf("LOAD %d\n",tmpr);
+	counter++;
+	printf("INC \n");
+	counter++;
+	printf("SHL %d\n",flagaC);
+	counter++;
+	printf("STORE %d\n",flagaC);
+	counter++;
+	printf("STORE %d\n",tmpr);
+	counter++;
+	printf("JUMP %d\n",poczatek_petli_odwr);
+	counter++;
+	/*********************************/
+	
+	printf("RESET \n");
+	counter++;
+	printf("STORE %d\n",flagaC);
+	counter++;
+	
+	int poczatek_petli=counter;
+	
+	/*****************spr przesowacze *********8****************///
+	printf("LOAD %d\n",flagaC);
+	counter++;
+	printf("JZERO %d\n",counter+3);
+	counter++;
+	printf("LOAD %d\n",jedynka);
+	counter++;
+	printf("STORE %d\n",flagaC);
+	counter++;
+	/************************** DZIELIMY!************2*****************/
+	printf("LOAD %d\n",flagaD);
+	counter++;
+	printf("SHL %d\n",usuwacz);
+	counter++;
+	printf("ADD %d\n",tmpr);
+	counter++;
+	printf("STORE %d\n",tmpr);
+	counter++;
+	/*****************************spr warunek konca ******************///
+	printf("LOAD %d\n",licznik);
+	counter++;
+	printf("SHR %d\n",jedynka);
+	counter++;
+	printf("STORE %d\n",licznik);
+	counter++;
+	printf("JODD %d\n",counter+2);
+	counter++;
+	printf("JUMP %d\n",counter+28);
+	counter++;
+	/**************************lapie to co wypadnie z tmpr ******11*****///
+	printf("LOAD %d\n",tmpr);		
+	counter++;
+	printf("JODD %d\n",counter+6);
+	counter++;
+	printf("SHR %d\n",jedynka);
+	counter++;
+	printf("STORE %d\n",tmpr);
+	counter++;
+	printf("LOAD %d\n",reszta);
+	counter++;
+	printf("SHL %d\n",flagaC);
+	counter++;
+	printf("JUMP %d\n",counter+7);
+	counter++;
+	printf("SHR %d\n",jedynka);
+	counter++;
+	printf("STORE %d\n",tmpr);
+	counter++;
+	printf("LOAD %d\n",reszta);
+	counter++;
+	printf("SHL %d\n",flagaC);
+	counter++;
+	printf("INC \n");
+	counter++;
+	printf("STORE %d\n",flagaC);
+	counter++;
+	/************10***************************************************/
+	printf("STORE %d\n",reszta);
+	counter++;
+	printf("SUB %d\n",adres2);
+	counter++;
+	printf("JZERO %d\n",counter+6);
+	counter++;
+	printf("STORE %d\n",reszta);
+	counter++;
+	printf("RESET \n");
+	counter++;
+	printf("INC \n");
+	counter++;
+	printf("STORE %d\n",flagaD);
+	counter++;
+	printf("JUMP %d\n",poczatek_petli);
+	counter++;
+	/*************7******************************/
+	printf("LOAD %d\n",adres2);
+	counter++;
+	printf("SUB %d\n",reszta);
+	counter++;
+	printf("JZERO %d\n",counter-7);
+	counter++;
+	printf("RESET \n");
+	counter++
+	printf("STORE %d\n",flagaD);
+	counter++;
+	printf("JUMP %d\n",poczatek_petli);
+	counter++;
+
+
+	/** kolejne podejscie do optymalnego dzielenia ***/
+	int find_one=counter;
+	printf("LOAD %d\n",tmp1);
+	counter++;
+	printf("JOOD %d\n",counter+8);
+	counter++;
+	printf("SHR %d\n",jedynka);
+	counter++;
+	printf("STORE %d\n",tmp1);
+	counter++;
+	printf("LOAD %d\n",licznik);
+	counter++;
+	printf("SHL %d\n",jedynka);
+	counter++;
+	printf("INC \n");
+	counter++;
+	printf("STORE %d\n",licznik);
+	counter++;
+	printf("JUMP %d\n",find_one);
+	counter++;
